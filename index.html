@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhinandan | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #111827;
+            line-height: 1.6;
+        }
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            font-size: 2rem;
+            color: #3b82f6;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        nav {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #111827;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #3b82f6;
+            left: 0;
+            bottom: -5px;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        section {
+            max-width: 960px;
+            margin: 4rem auto;
+            padding: 0 20px;
+        }
+        
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 10px;
+        }
+        
+        #about p {
+            font-size: 1.1rem;
+            color: #374151;
+        }
+        
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skills-grid span {
+            background: #3b82f6;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        
+        .skills-grid span:hover {
+            transform: scale(1.05);
+        }
+        
+        .project-card {
+            background: #f1f5f9;
+            padding: 20px;
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .project-card h3 {
+            margin-bottom: 5px;
+            color: #111827;
+        }
+        
+        #contact a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e293b;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Hi, I'm Abhinandan</h1>
+        <p>Cyber Security Specialist & Developer</p>
+        <a href="#about" class="scroll-down">&#8675;</a>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I’m currently pursuing BCA with a specialization in Cyber Security from Swami Vivekanand Subharti University. I enjoy building secure and creative tech projects that make an impact.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <span>Python</span>
+                <span>C++</span>
+                <span>HTML/CSS</span>
+                <span>Networking</span>
+                <span>Linux</span>
+                <span>Cloud Computing</span>
+                <span>Java Development</span>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Tic Tac Toe Game</h3>
+                <p>A web-based game built using HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>This very portfolio you're viewing is a live project of mine.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:kumarguptaabhinandan52@gmail.com">kumarguptaabhinandan52@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/abhinandan-kumar-gupta-0050akg" target="_blank">abhinandan-kumar-gupta</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Abhinandan. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
