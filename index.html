@@ -5,7 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhinandan | Portfolio</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
@@ -70,6 +76,7 @@
       0%, 100% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-10px);
       }
@@ -80,6 +87,7 @@
         transform: translateY(40px);
         opacity: 0;
       }
+
       100% {
         transform: translateY(0);
         opacity: 1;
@@ -90,6 +98,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -145,7 +154,6 @@
       max-width: 960px;
       margin: 4rem auto;
       padding: 0 20px;
-      animation: fadeIn 1s ease;
     }
 
     section h2 {
@@ -255,12 +263,12 @@
   </nav>
 
   <main>
-    <section id="about">
+    <section id="about" data-aos="fade-up">
       <h2>About Me</h2>
       <p>I’m currently pursuing BCA with a specialization in Cyber Security from Swami Vivekanand Subharti University. I enjoy building secure and creative tech projects that make an impact.</p>
     </section>
 
-    <section id="skills">
+    <section id="skills" data-aos="fade-right">
       <h2>Skills</h2>
       <div class="skills-grid">
         <span>Python</span>
@@ -273,19 +281,19 @@
       </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" data-aos="fade-left">
       <h2>Projects</h2>
-      <div class="project-card">
+      <div class="project-card" data-aos="zoom-in">
         <h3>Tic Tac Toe Game</h3>
         <p>A web-based game built using HTML, CSS, and JavaScript.</p>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
         <h3>Portfolio Website</h3>
         <p>This very portfolio you're viewing is a live project of mine.</p>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" data-aos="fade-up">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:kumarguptaabhinandan52@gmail.com">kumarguptaabhinandan52@gmail.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/abhinandan-kumar-gupta-0050akg" target="_blank">abhinandan-kumar-gupta</a></p>
@@ -295,6 +303,15 @@
   <footer>
     <p>© 2025 Abhinandan. All rights reserved.</p>
   </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
 </body>
 
 </html>
