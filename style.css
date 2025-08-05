@@ -1,5 +1,4 @@
-/* Reset & base styles */
-
+/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -17,9 +16,7 @@ body {
     line-height: 1.6;
 }
 
-
 /* Header */
-
 header {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: white;
@@ -50,12 +47,18 @@ header p {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #00bfff;
     animation: bounce 2s infinite;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
+.scroll-down:hover {
+    transform: translateX(-50%) scale(1.2);
+}
+
+/* Animations */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -79,8 +82,7 @@ header p {
 }
 
 @keyframes bounce {
-    0%,
-    100% {
+    0%, 100% {
         transform: translate(-50%, 0);
     }
     50% {
@@ -88,9 +90,7 @@ header p {
     }
 }
 
-
-/* Nav */
-
+/* Navigation */
 nav {
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -104,6 +104,7 @@ nav ul {
     justify-content: center;
     list-style: none;
     padding: 10px;
+    flex-wrap: wrap;
 }
 
 nav li {
@@ -115,15 +116,32 @@ nav a {
     color: #2c3e50;
     font-weight: bold;
     transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 100%;
+    background-color: #00bfff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
 }
 
 nav a:hover {
     color: #00bfff;
 }
 
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
 
 /* Sections */
-
 main section {
     max-width: 960px;
     margin: 60px auto;
@@ -131,7 +149,6 @@ main section {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-    animation: fadeIn 1.2s ease-in-out;
 }
 
 h2 {
@@ -142,9 +159,7 @@ h2 {
     padding-left: 15px;
 }
 
-
 /* Skills Grid */
-
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -166,9 +181,7 @@ h2 {
     transform: scale(1.08);
 }
 
-
 /* Projects */
-
 .project-card {
     background-color: #f9f9f9;
     margin-bottom: 25px;
@@ -182,21 +195,19 @@ h2 {
     transform: translateY(-5px);
 }
 
-
 /* Contact */
-
 #contact a {
     color: #0077ff;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 #contact a:hover {
     text-decoration: underline;
+    color: #005fcc;
 }
 
-
 /* Footer */
-
 footer {
     text-align: center;
     padding: 25px;
@@ -206,9 +217,7 @@ footer {
     font-size: 0.95rem;
 }
 
-
-/* Animations */
-
+/* AOS Animations - optional fallback class styles */
 .fade-in {
     animation: fadeIn 1.5s ease-in forwards;
 }
@@ -236,25 +245,33 @@ footer {
     }
 }
 
-
 /* Responsive */
-
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         text-align: center;
     }
+
     .skills-grid {
         flex-direction: column;
+        align-items: center;
     }
+
     header h1 {
         font-size: 2.2rem;
     }
+
     h2 {
         font-size: 1.8rem;
     }
+
     .project-card,
     main section {
         padding: 20px;
+    }
+
+    .scroll-down {
+        font-size: 2rem;
+        bottom: 15px;
     }
 }
